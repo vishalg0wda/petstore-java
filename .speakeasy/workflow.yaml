@@ -1,0 +1,18 @@
+workflowVersion: 1.0.0
+speakeasyVersion: latest
+sources:
+    petstore-oas:
+        inputs:
+            - location: openapi.yaml
+        overlays:
+            - location: .speakeasy/speakeasy-modifications-overlay.yaml
+        registry:
+            location: registry.speakeasyapi.dev/deathstar/deathstar/petstore-oas
+targets:
+    petstore:
+        target: java
+        source: petstore-oas
+        codeSamples:
+            registry:
+                location: registry.speakeasyapi.dev/deathstar/deathstar/petstore-oas-code-samples
+            blocking: false

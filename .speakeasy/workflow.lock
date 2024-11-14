@@ -1,0 +1,33 @@
+speakeasyVersion: 1.439.0
+sources:
+    petstore-oas:
+        sourceNamespace: petstore-oas
+        sourceRevisionDigest: sha256:961832a62a22ddfe9a93b869b1d49d7bd8306bf07716e4de90978bbbb6b3c95c
+        sourceBlobDigest: sha256:32340f5c9cc9d77f82090e1b3740a43354c2e0f6b5d65595be3b4328302b8571
+        tags:
+            - latest
+targets:
+    petstore:
+        source: petstore-oas
+        sourceNamespace: petstore-oas
+        sourceRevisionDigest: sha256:961832a62a22ddfe9a93b869b1d49d7bd8306bf07716e4de90978bbbb6b3c95c
+        sourceBlobDigest: sha256:32340f5c9cc9d77f82090e1b3740a43354c2e0f6b5d65595be3b4328302b8571
+        codeSamplesNamespace: petstore-oas-code-samples
+        codeSamplesRevisionDigest: sha256:0ce54bdfe760e556716f35045c89eff66d04726293b0369c70d28f37e4b7e03e
+workflow:
+    workflowVersion: 1.0.0
+    speakeasyVersion: latest
+    sources:
+        petstore-oas:
+            inputs:
+                - location: openapi.yaml
+            registry:
+                location: registry.speakeasyapi.dev/deathstar/deathstar/petstore-oas
+    targets:
+        petstore:
+            target: java
+            source: petstore-oas
+            codeSamples:
+                registry:
+                    location: registry.speakeasyapi.dev/deathstar/deathstar/petstore-oas-code-samples
+                blocking: false
