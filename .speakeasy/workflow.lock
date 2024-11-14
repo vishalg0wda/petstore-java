@@ -13,7 +13,7 @@ targets:
         sourceRevisionDigest: sha256:961832a62a22ddfe9a93b869b1d49d7bd8306bf07716e4de90978bbbb6b3c95c
         sourceBlobDigest: sha256:32340f5c9cc9d77f82090e1b3740a43354c2e0f6b5d65595be3b4328302b8571
         codeSamplesNamespace: petstore-oas-code-samples
-        codeSamplesRevisionDigest: sha256:0ce54bdfe760e556716f35045c89eff66d04726293b0369c70d28f37e4b7e03e
+        codeSamplesRevisionDigest: sha256:f22cb4ddb738451296f9fe7d20b30b985384b4431f49ad57e5e97682afd1b65e
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
@@ -21,6 +21,8 @@ workflow:
         petstore-oas:
             inputs:
                 - location: openapi.yaml
+            overlays:
+                - location: .speakeasy/speakeasy-modifications-overlay.yaml
             registry:
                 location: registry.speakeasyapi.dev/deathstar/deathstar/petstore-oas
     targets:

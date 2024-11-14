@@ -1,27 +1,38 @@
 overlay: 1.0.0
 info:
   title: Speakeasy Modifications
-  version: 0.0.1
+  version: 0.0.2
   x-speakeasy-metadata:
-    type: speakeasy-modifications
-    before: ""
     after: ""
+    before: ""
+    type: speakeasy-modifications
 actions:
-  - target: $["paths"]["/user/{username}"]["delete"]
+  - target: $["paths"]["/pet/{petId}"]["delete"]
     update:
       x-speakeasy-name-override: delete
     x-speakeasy-metadata:
       type: method-name
-      before: sdk.user.deleteUser()
-      after: sdk.user.delete()
+      before: sdk.pet.deletePet()
+      after: sdk.pet.delete()
+      reviewed_at: 1731615039967
       created_at: 1731614965457
-  - target: $["paths"]["/user/login"]["get"]
+  - target: $["paths"]["/user"]["post"]
     update:
-      x-speakeasy-name-override: login
+      x-speakeasy-name-override: create
     x-speakeasy-metadata:
       type: method-name
-      before: sdk.user.loginUser()
-      after: sdk.user.login()
+      before: sdk.user.createUser()
+      after: sdk.user.create()
+      reviewed_at: 1731615039967
+      created_at: 1731614965457
+  - target: $["paths"]["/user/{username}"]["put"]
+    update:
+      x-speakeasy-name-override: update
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.user.updateUser()
+      after: sdk.user.update()
+      reviewed_at: 1731615039967
       created_at: 1731614965457
   - target: $["paths"]["/store/order/{orderId}"]["get"]
     update:
@@ -31,22 +42,7 @@ actions:
       type: method-name
       before: sdk.store.getOrderById()
       after: sdk.store.orders.get()
-      created_at: 1731614965457
-  - target: $["paths"]["/user/logout"]["get"]
-    update:
-      x-speakeasy-name-override: logout
-    x-speakeasy-metadata:
-      type: method-name
-      before: sdk.user.logoutUser()
-      after: sdk.user.logout()
-      created_at: 1731614965457
-  - target: $["paths"]["/pet/findByTags"]["get"]
-    update:
-      x-speakeasy-name-override: findByTags
-    x-speakeasy-metadata:
-      type: method-name
-      before: sdk.pet.findPetsByTags()
-      after: sdk.pet.findByTags()
+      reviewed_at: 1731615039967
       created_at: 1731614965457
   - target: $["paths"]["/pet/{petId}"]["get"]
     update:
@@ -55,14 +51,7 @@ actions:
       type: method-name
       before: sdk.pet.getPetById()
       after: sdk.pet.getById()
-      created_at: 1731614965457
-  - target: $["paths"]["/pet/{petId}"]["delete"]
-    update:
-      x-speakeasy-name-override: delete
-    x-speakeasy-metadata:
-      type: method-name
-      before: sdk.pet.deletePet()
-      after: sdk.pet.delete()
+      reviewed_at: 1731615039967
       created_at: 1731614965457
   - target: $["paths"]["/user/createWithList"]["post"]
     update:
@@ -71,6 +60,7 @@ actions:
       type: method-name
       before: sdk.user.createUsersWithListInput()
       after: sdk.user.createWithList()
+      reviewed_at: 1731615039967
       created_at: 1731614965457
   - target: $["paths"]["/pet"]["put"]
     update:
@@ -79,14 +69,7 @@ actions:
       type: method-name
       before: sdk.pet.updatePet()
       after: sdk.pet.update()
-      created_at: 1731614965457
-  - target: $["paths"]["/user"]["post"]
-    update:
-      x-speakeasy-name-override: create
-    x-speakeasy-metadata:
-      type: method-name
-      before: sdk.user.createUser()
-      after: sdk.user.create()
+      reviewed_at: 1731615039967
       created_at: 1731614965457
   - target: $["paths"]["/pet/findByStatus"]["get"]
     update:
@@ -95,22 +78,7 @@ actions:
       type: method-name
       before: sdk.pet.findPetsByStatus()
       after: sdk.pet.findByStatus()
-      created_at: 1731614965457
-  - target: $["paths"]["/pet"]["post"]
-    update:
-      x-speakeasy-name-override: add
-    x-speakeasy-metadata:
-      type: method-name
-      before: sdk.pet.addPet()
-      after: sdk.pet.add()
-      created_at: 1731614965457
-  - target: $["paths"]["/user/{username}"]["put"]
-    update:
-      x-speakeasy-name-override: update
-    x-speakeasy-metadata:
-      type: method-name
-      before: sdk.user.updateUser()
-      after: sdk.user.update()
+      reviewed_at: 1731615039967
       created_at: 1731614965457
   - target: $["paths"]["/user/{username}"]["get"]
     update:
@@ -119,4 +87,50 @@ actions:
       type: method-name
       before: sdk.user.getUserByName()
       after: sdk.user.getByName()
+      reviewed_at: 1731615039967
+      created_at: 1731614965457
+  - target: $["paths"]["/user/login"]["get"]
+    update:
+      x-speakeasy-name-override: login
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.user.loginUser()
+      after: sdk.user.login()
+      reviewed_at: 1731615039967
+      created_at: 1731614965457
+  - target: $["paths"]["/pet/findByTags"]["get"]
+    update:
+      x-speakeasy-name-override: findByTags
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.pet.findPetsByTags()
+      after: sdk.pet.findByTags()
+      reviewed_at: 1731615039967
+      created_at: 1731614965457
+  - target: $["paths"]["/pet"]["post"]
+    update:
+      x-speakeasy-name-override: add
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.pet.addPet()
+      after: sdk.pet.add()
+      reviewed_at: 1731615039967
+      created_at: 1731614965457
+  - target: $["paths"]["/user/{username}"]["delete"]
+    update:
+      x-speakeasy-name-override: delete
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.user.deleteUser()
+      after: sdk.user.delete()
+      reviewed_at: 1731615039967
+      created_at: 1731614965457
+  - target: $["paths"]["/user/logout"]["get"]
+    update:
+      x-speakeasy-name-override: logout
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.user.logoutUser()
+      after: sdk.user.logout()
+      reviewed_at: 1731615039967
       created_at: 1731614965457
