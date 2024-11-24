@@ -16,7 +16,7 @@ java:
   version: 0.1.1
   additionalDependencies: []
   additionalPlugins: []
-  artifactID: openapi
+  artifactID: petstore
   clientServerStatusCodesAsErrors: true
   companyEmail: info@mycompany.com
   companyName: My Company
