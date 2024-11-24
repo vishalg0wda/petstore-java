@@ -17,14 +17,7 @@ Developer-friendly & type-safe Java SDK specifically catered to leverage *openap
 <!-- Start Summary [summary] -->
 ## Summary
 
-Petstore - OpenAPI 3.1: This is a sample Pet Store Server based on the OpenAPI 3.1 specification.
-
-Some useful links:
-- [OpenAPI Reference](https://www.speakeasy.com/openapi)
-- [The Pet Store repository](https://github.com/swagger-api/swagger-petstore)
-- [The source API definition for the Pet Store](https://github.com/swagger-api/swagger-petstore/blob/master/src/main/resources/openapi.yaml)
-
-For more information about the API: [Find out more about Swagger](http://swagger.io)
+Star Wars API: An API inspired by the Star Wars universe
 <!-- End Summary [summary] -->
 
 <!-- Start Table of Contents [toc] -->
@@ -35,7 +28,6 @@ For more information about the API: [Find out more about Swagger](http://swagger
 * [Available Resources and Operations](#available-resources-and-operations)
 * [Error Handling](#error-handling)
 * [Server Selection](#server-selection)
-* [Authentication](#authentication)
 <!-- End Table of Contents [toc] -->
 
 <!-- Start SDK Installation [installation] -->
@@ -49,15 +41,15 @@ The samples below show how a published SDK artifact is used:
 
 Gradle:
 ```groovy
-implementation 'com.vgd:openapi:0.2.0'
+implementation 'io.github.vishalg0wda:deathstar:0.4.1'
 ```
 
 Maven:
 ```xml
 <dependency>
-    <groupId>com.vgd</groupId>
-    <artifactId>openapi</artifactId>
-    <version>0.2.0</version>
+    <groupId>io.github.vishalg0wda</groupId>
+    <artifactId>deathstar</artifactId>
+    <version>0.4.1</version>
 </dependency>
 ```
 
@@ -84,40 +76,21 @@ gradlew.bat publishToMavenLocal -Pskip.signing
 ```java
 package hello.world;
 
-import com.vgd.openapi.Petstore;
-import com.vgd.openapi.models.components.Category;
-import com.vgd.openapi.models.components.Pet;
-import com.vgd.openapi.models.errors.ApiErrorInvalidInput;
-import com.vgd.openapi.models.errors.ApiErrorNotFound;
-import com.vgd.openapi.models.errors.ApiErrorUnauthorized;
-import com.vgd.openapi.models.operations.UpdatePetResponse;
+import io.github.vishalg0wda.deathstar.Deathstar;
+import io.github.vishalg0wda.deathstar.models.operations.GetJediResponse;
 import java.lang.Exception;
-import java.util.List;
 
 public class Application {
 
-    public static void main(String[] args) throws ApiErrorInvalidInput, ApiErrorUnauthorized, ApiErrorNotFound, Exception {
+    public static void main(String[] args) throws Exception {
 
-        Petstore sdk = Petstore.builder()
-                .apiKey("<YOUR_API_KEY_HERE>")
+        Deathstar sdk = Deathstar.builder()
             .build();
 
-        Pet req = Pet.builder()
-                .name("doggie")
-                .photoUrls(List.of(
-                    "<value>"))
-                .id(10L)
-                .category(Category.builder()
-                    .id(1L)
-                    .name("Dogs")
-                    .build())
-                .build();
-
-        UpdatePetResponse res = sdk.pet().update()
-                .request(req)
+        GetJediResponse res = sdk.jedi().get()
                 .call();
 
-        if (res.pet().isPresent()) {
+        if (res.object().isPresent()) {
             // handle response
         }
     }
@@ -131,36 +104,14 @@ public class Application {
 <details open>
 <summary>Available methods</summary>
 
-### [pet()](docs/sdks/pet/README.md)
 
-* [update](docs/sdks/pet/README.md#update) - Update an existing pet
-* [add](docs/sdks/pet/README.md#add) - Add a new pet to the store
-* [findByStatus](docs/sdks/pet/README.md#findbystatus) - Finds Pets by status
-* [findByTags](docs/sdks/pet/README.md#findbytags) - Finds Pets by tags
-* [getById](docs/sdks/pet/README.md#getbyid) - Find pet by ID
-* [delete](docs/sdks/pet/README.md#delete) - Deletes a pet
-* [uploadFile](docs/sdks/pet/README.md#uploadfile) - uploads an image
+### [jedi()](docs/sdks/jedi/README.md)
 
+* [get](docs/sdks/jedi/README.md#get) - Jedi endpoint
 
-### [store()](docs/sdks/store/README.md)
+### [sith()](docs/sdks/sith/README.md)
 
-* [getInventory](docs/sdks/store/README.md#getinventory) - Returns pet inventories by status
-* [placeOrder](docs/sdks/store/README.md#placeorder) - Place an order for a pet
-* [deleteOrder](docs/sdks/store/README.md#deleteorder) - Delete purchase order by ID
-
-#### [store().orders()](docs/sdks/orders/README.md)
-
-* [get](docs/sdks/orders/README.md#get) - Find purchase order by ID
-
-### [user()](docs/sdks/user/README.md)
-
-* [create](docs/sdks/user/README.md#create) - Create user
-* [createWithList](docs/sdks/user/README.md#createwithlist) - Creates list of users with given input array
-* [login](docs/sdks/user/README.md#login) - Logs user into the system
-* [logout](docs/sdks/user/README.md#logout) - Logs out current logged in user session
-* [getByName](docs/sdks/user/README.md#getbyname) - Get user by user name
-* [update](docs/sdks/user/README.md#update) - Update user
-* [delete](docs/sdks/user/README.md#delete) - Delete user
+* [get](docs/sdks/sith/README.md#get) - Sith endpoint
 
 </details>
 <!-- End Available Resources and Operations [operations] -->
@@ -170,54 +121,32 @@ public class Application {
 
 Handling errors in this SDK should largely match your expectations. All operations return a response object or raise an exception.
 
-By default, an API error will throw a `models/errors/APIException` exception. When custom error responses are specified for an operation, the SDK may also throw their associated exception. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `update` method throws the following exceptions:
+By default, an API error will throw a `models/errors/APIException` exception. When custom error responses are specified for an operation, the SDK may also throw their associated exception. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `get` method throws the following exceptions:
 
-| Error Type                         | Status Code | Content Type     |
-| ---------------------------------- | ----------- | ---------------- |
-| models/errors/ApiErrorInvalidInput | 400         | application/json |
-| models/errors/ApiErrorUnauthorized | 401         | application/json |
-| models/errors/ApiErrorNotFound     | 404         | application/json |
-| models/errors/APIException         | 4XX, 5XX    | \*/\*            |
+| Error Type                 | Status Code | Content Type |
+| -------------------------- | ----------- | ------------ |
+| models/errors/APIException | 4XX, 5XX    | \*/\*        |
 
 ### Example
 
 ```java
 package hello.world;
 
-import com.vgd.openapi.Petstore;
-import com.vgd.openapi.models.components.Category;
-import com.vgd.openapi.models.components.Pet;
-import com.vgd.openapi.models.errors.ApiErrorInvalidInput;
-import com.vgd.openapi.models.errors.ApiErrorNotFound;
-import com.vgd.openapi.models.errors.ApiErrorUnauthorized;
-import com.vgd.openapi.models.operations.UpdatePetResponse;
+import io.github.vishalg0wda.deathstar.Deathstar;
+import io.github.vishalg0wda.deathstar.models.operations.GetJediResponse;
 import java.lang.Exception;
-import java.util.List;
 
 public class Application {
 
-    public static void main(String[] args) throws ApiErrorInvalidInput, ApiErrorUnauthorized, ApiErrorNotFound, Exception {
+    public static void main(String[] args) throws Exception {
 
-        Petstore sdk = Petstore.builder()
-                .apiKey("<YOUR_API_KEY_HERE>")
+        Deathstar sdk = Deathstar.builder()
             .build();
 
-        Pet req = Pet.builder()
-                .name("doggie")
-                .photoUrls(List.of(
-                    "<value>"))
-                .id(10L)
-                .category(Category.builder()
-                    .id(1L)
-                    .name("Dogs")
-                    .build())
-                .build();
-
-        UpdatePetResponse res = sdk.pet().update()
-                .request(req)
+        GetJediResponse res = sdk.jedi().get()
                 .call();
 
-        if (res.pet().isPresent()) {
+        if (res.object().isPresent()) {
             // handle response
         }
     }
@@ -228,52 +157,28 @@ public class Application {
 <!-- Start Server Selection [server] -->
 ## Server Selection
 
-### Server Variables
-
-The default server `https://{environment}.petstore.io` contains variables and is set to `https://prod.petstore.io` by default. To override default values, the following builder methods are available when initializing the SDK client instance:
- * `environment(ServerEnvironment environment)`
-
 ### Override Server URL Per-Client
 
 The default server can also be overridden globally using the `.serverURL(String serverUrl)` builder method when initializing the SDK client instance. For example:
 ```java
 package hello.world;
 
-import com.vgd.openapi.Petstore;
-import com.vgd.openapi.models.components.Category;
-import com.vgd.openapi.models.components.Pet;
-import com.vgd.openapi.models.errors.ApiErrorInvalidInput;
-import com.vgd.openapi.models.errors.ApiErrorNotFound;
-import com.vgd.openapi.models.errors.ApiErrorUnauthorized;
-import com.vgd.openapi.models.operations.UpdatePetResponse;
+import io.github.vishalg0wda.deathstar.Deathstar;
+import io.github.vishalg0wda.deathstar.models.operations.GetJediResponse;
 import java.lang.Exception;
-import java.util.List;
 
 public class Application {
 
-    public static void main(String[] args) throws ApiErrorInvalidInput, ApiErrorUnauthorized, ApiErrorNotFound, Exception {
+    public static void main(String[] args) throws Exception {
 
-        Petstore sdk = Petstore.builder()
-                .serverURL("https://prod.petstore.io")
-                .apiKey("<YOUR_API_KEY_HERE>")
+        Deathstar sdk = Deathstar.builder()
+                .serverURL("http://localhost:8080")
             .build();
 
-        Pet req = Pet.builder()
-                .name("doggie")
-                .photoUrls(List.of(
-                    "<value>"))
-                .id(10L)
-                .category(Category.builder()
-                    .id(1L)
-                    .name("Dogs")
-                    .build())
-                .build();
-
-        UpdatePetResponse res = sdk.pet().update()
-                .request(req)
+        GetJediResponse res = sdk.jedi().get()
                 .call();
 
-        if (res.pet().isPresent()) {
+        if (res.object().isPresent()) {
             // handle response
         }
     }
@@ -281,61 +186,6 @@ public class Application {
 ```
 <!-- End Server Selection [server] -->
 
-<!-- Start Authentication [security] -->
-## Authentication
-
-### Per-Client Security Schemes
-
-This SDK supports the following security scheme globally:
-
-| Name     | Type   | Scheme  |
-| -------- | ------ | ------- |
-| `apiKey` | apiKey | API key |
-
-To authenticate with the API the `apiKey` parameter must be set when initializing the SDK client instance. For example:
-```java
-package hello.world;
-
-import com.vgd.openapi.Petstore;
-import com.vgd.openapi.models.components.Category;
-import com.vgd.openapi.models.components.Pet;
-import com.vgd.openapi.models.errors.ApiErrorInvalidInput;
-import com.vgd.openapi.models.errors.ApiErrorNotFound;
-import com.vgd.openapi.models.errors.ApiErrorUnauthorized;
-import com.vgd.openapi.models.operations.UpdatePetResponse;
-import java.lang.Exception;
-import java.util.List;
-
-public class Application {
-
-    public static void main(String[] args) throws ApiErrorInvalidInput, ApiErrorUnauthorized, ApiErrorNotFound, Exception {
-
-        Petstore sdk = Petstore.builder()
-                .apiKey("<YOUR_API_KEY_HERE>")
-            .build();
-
-        Pet req = Pet.builder()
-                .name("doggie")
-                .photoUrls(List.of(
-                    "<value>"))
-                .id(10L)
-                .category(Category.builder()
-                    .id(1L)
-                    .name("Dogs")
-                    .build())
-                .build();
-
-        UpdatePetResponse res = sdk.pet().update()
-                .request(req)
-                .call();
-
-        if (res.pet().isPresent()) {
-            // handle response
-        }
-    }
-}
-```
-<!-- End Authentication [security] -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
 

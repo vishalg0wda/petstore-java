@@ -1,22 +1,19 @@
 lockVersion: 2.0.0
 id: 3442177f-e4e2-40fb-94ee-ba3ecb8259f8
 management:
-  docChecksum: eca4572634e0d830b2a8d7716ae31d73
+  docChecksum: df6b15cd184d456978f0493f21172731
   docVersion: 1.0.0
   speakeasyVersion: 1.444.1
   generationVersion: 2.461.4
-  releaseVersion: 0.2.0
-  configChecksum: edaad2546e4cffcb3f406bf8e0b200ed
+  releaseVersion: 0.4.1
+  configChecksum: ad8043ddfbf2884216393fbf1ca2ff43
   repoURL: https://github.com/vishalg0wda/petstore-java.git
+  published: true
 features:
   java:
     additionalDependencies: 0.1.0
-    constsAndDefaults: 0.1.1
     core: 3.32.1
-    flattening: 2.81.1
-    globalSecurity: 2.82.7
     globalSecurityCallbacks: 0.1.0
-    globalSecurityFlattening: 0.1.0
     globalServerURLs: 2.82.1
     groups: 2.81.2
     nameOverrides: 2.81.3
@@ -26,167 +23,72 @@ generatedFiles:
   - CONTRIBUTING.md
   - USAGE.md
   - build.gradle
-  - docs/models/components/ApiResponse.md
-  - docs/models/components/Category.md
-  - docs/models/components/Order.md
-  - docs/models/components/OrderStatus.md
-  - docs/models/components/Pet.md
-  - docs/models/components/Security.md
-  - docs/models/components/Status.md
-  - docs/models/components/Tag.md
-  - docs/models/components/User.md
-  - docs/models/errors/ApiErrorInvalidInput.md
-  - docs/models/errors/ApiErrorNotFound.md
-  - docs/models/errors/ApiErrorUnauthorized.md
-  - docs/models/operations/AddPetResponse.md
-  - docs/models/operations/CreateUserResponse.md
-  - docs/models/operations/CreateUsersWithListInputResponse.md
-  - docs/models/operations/DeleteOrderRequest.md
-  - docs/models/operations/DeleteOrderResponse.md
-  - docs/models/operations/DeletePetRequest.md
-  - docs/models/operations/DeletePetResponse.md
-  - docs/models/operations/DeleteUserRequest.md
-  - docs/models/operations/DeleteUserResponse.md
-  - docs/models/operations/FindPetsByStatusRequest.md
-  - docs/models/operations/FindPetsByStatusResponse.md
-  - docs/models/operations/FindPetsByTagsRequest.md
-  - docs/models/operations/FindPetsByTagsResponse.md
-  - docs/models/operations/GetInventoryResponse.md
-  - docs/models/operations/GetOrderByIdRequest.md
-  - docs/models/operations/GetOrderByIdResponse.md
-  - docs/models/operations/GetPetByIdRequest.md
-  - docs/models/operations/GetPetByIdResponse.md
-  - docs/models/operations/GetUserByNameRequest.md
-  - docs/models/operations/GetUserByNameResponse.md
-  - docs/models/operations/LoginUserRequest.md
-  - docs/models/operations/LoginUserResponse.md
-  - docs/models/operations/LogoutUserResponse.md
-  - docs/models/operations/PlaceOrderResponse.md
-  - docs/models/operations/Status.md
-  - docs/models/operations/UpdatePetResponse.md
-  - docs/models/operations/UpdateUserRequest.md
-  - docs/models/operations/UpdateUserResponse.md
-  - docs/models/operations/UploadFileRequest.md
-  - docs/models/operations/UploadFileResponse.md
-  - docs/sdks/orders/README.md
-  - docs/sdks/pet/README.md
-  - docs/sdks/petstore/README.md
-  - docs/sdks/store/README.md
-  - docs/sdks/user/README.md
+  - docs/models/operations/GetJediResponse.md
+  - docs/models/operations/GetJediResponseBody.md
+  - docs/models/operations/GetSithResponse.md
+  - docs/models/operations/GetSithResponseBody.md
+  - docs/sdks/deathstar/README.md
+  - docs/sdks/jedi/README.md
+  - docs/sdks/sith/README.md
   - gradle/wrapper/gradle-wrapper.jar
   - gradle/wrapper/gradle-wrapper.properties
   - gradlew
   - gradlew.bat
   - settings.gradle
-  - src/main/java/com/vgd/openapi/Orders.java
-  - src/main/java/com/vgd/openapi/Pet.java
-  - src/main/java/com/vgd/openapi/Petstore.java
-  - src/main/java/com/vgd/openapi/SDKConfiguration.java
-  - src/main/java/com/vgd/openapi/SecuritySource.java
-  - src/main/java/com/vgd/openapi/Store.java
-  - src/main/java/com/vgd/openapi/User.java
-  - src/main/java/com/vgd/openapi/models/components/ApiResponse.java
-  - src/main/java/com/vgd/openapi/models/components/Category.java
-  - src/main/java/com/vgd/openapi/models/components/Order.java
-  - src/main/java/com/vgd/openapi/models/components/OrderStatus.java
-  - src/main/java/com/vgd/openapi/models/components/Pet.java
-  - src/main/java/com/vgd/openapi/models/components/Security.java
-  - src/main/java/com/vgd/openapi/models/components/Status.java
-  - src/main/java/com/vgd/openapi/models/components/Tag.java
-  - src/main/java/com/vgd/openapi/models/components/User.java
-  - src/main/java/com/vgd/openapi/models/errors/APIException.java
-  - src/main/java/com/vgd/openapi/models/errors/ApiErrorInvalidInput.java
-  - src/main/java/com/vgd/openapi/models/errors/ApiErrorNotFound.java
-  - src/main/java/com/vgd/openapi/models/errors/ApiErrorUnauthorized.java
-  - src/main/java/com/vgd/openapi/models/errors/AuthException.java
-  - src/main/java/com/vgd/openapi/models/operations/AddPetRequestBuilder.java
-  - src/main/java/com/vgd/openapi/models/operations/AddPetResponse.java
-  - src/main/java/com/vgd/openapi/models/operations/CreateUserRequestBuilder.java
-  - src/main/java/com/vgd/openapi/models/operations/CreateUserResponse.java
-  - src/main/java/com/vgd/openapi/models/operations/CreateUsersWithListInputRequestBuilder.java
-  - src/main/java/com/vgd/openapi/models/operations/CreateUsersWithListInputResponse.java
-  - src/main/java/com/vgd/openapi/models/operations/DeleteOrderRequest.java
-  - src/main/java/com/vgd/openapi/models/operations/DeleteOrderRequestBuilder.java
-  - src/main/java/com/vgd/openapi/models/operations/DeleteOrderResponse.java
-  - src/main/java/com/vgd/openapi/models/operations/DeletePetRequest.java
-  - src/main/java/com/vgd/openapi/models/operations/DeletePetRequestBuilder.java
-  - src/main/java/com/vgd/openapi/models/operations/DeletePetResponse.java
-  - src/main/java/com/vgd/openapi/models/operations/DeleteUserRequest.java
-  - src/main/java/com/vgd/openapi/models/operations/DeleteUserRequestBuilder.java
-  - src/main/java/com/vgd/openapi/models/operations/DeleteUserResponse.java
-  - src/main/java/com/vgd/openapi/models/operations/FindPetsByStatusRequest.java
-  - src/main/java/com/vgd/openapi/models/operations/FindPetsByStatusRequestBuilder.java
-  - src/main/java/com/vgd/openapi/models/operations/FindPetsByStatusResponse.java
-  - src/main/java/com/vgd/openapi/models/operations/FindPetsByTagsRequest.java
-  - src/main/java/com/vgd/openapi/models/operations/FindPetsByTagsRequestBuilder.java
-  - src/main/java/com/vgd/openapi/models/operations/FindPetsByTagsResponse.java
-  - src/main/java/com/vgd/openapi/models/operations/GetInventoryRequestBuilder.java
-  - src/main/java/com/vgd/openapi/models/operations/GetInventoryResponse.java
-  - src/main/java/com/vgd/openapi/models/operations/GetOrderByIdRequest.java
-  - src/main/java/com/vgd/openapi/models/operations/GetOrderByIdRequestBuilder.java
-  - src/main/java/com/vgd/openapi/models/operations/GetOrderByIdResponse.java
-  - src/main/java/com/vgd/openapi/models/operations/GetPetByIdRequest.java
-  - src/main/java/com/vgd/openapi/models/operations/GetPetByIdRequestBuilder.java
-  - src/main/java/com/vgd/openapi/models/operations/GetPetByIdResponse.java
-  - src/main/java/com/vgd/openapi/models/operations/GetUserByNameRequest.java
-  - src/main/java/com/vgd/openapi/models/operations/GetUserByNameRequestBuilder.java
-  - src/main/java/com/vgd/openapi/models/operations/GetUserByNameResponse.java
-  - src/main/java/com/vgd/openapi/models/operations/LoginUserRequest.java
-  - src/main/java/com/vgd/openapi/models/operations/LoginUserRequestBuilder.java
-  - src/main/java/com/vgd/openapi/models/operations/LoginUserResponse.java
-  - src/main/java/com/vgd/openapi/models/operations/LogoutUserRequestBuilder.java
-  - src/main/java/com/vgd/openapi/models/operations/LogoutUserResponse.java
-  - src/main/java/com/vgd/openapi/models/operations/PlaceOrderRequestBuilder.java
-  - src/main/java/com/vgd/openapi/models/operations/PlaceOrderResponse.java
-  - src/main/java/com/vgd/openapi/models/operations/SDKMethodInterfaces.java
-  - src/main/java/com/vgd/openapi/models/operations/Status.java
-  - src/main/java/com/vgd/openapi/models/operations/UpdatePetRequestBuilder.java
-  - src/main/java/com/vgd/openapi/models/operations/UpdatePetResponse.java
-  - src/main/java/com/vgd/openapi/models/operations/UpdateUserRequest.java
-  - src/main/java/com/vgd/openapi/models/operations/UpdateUserRequestBuilder.java
-  - src/main/java/com/vgd/openapi/models/operations/UpdateUserResponse.java
-  - src/main/java/com/vgd/openapi/models/operations/UploadFileRequest.java
-  - src/main/java/com/vgd/openapi/models/operations/UploadFileRequestBuilder.java
-  - src/main/java/com/vgd/openapi/models/operations/UploadFileResponse.java
-  - src/main/java/com/vgd/openapi/utils/BackoffStrategy.java
-  - src/main/java/com/vgd/openapi/utils/BigDecimalString.java
-  - src/main/java/com/vgd/openapi/utils/BigIntegerString.java
-  - src/main/java/com/vgd/openapi/utils/Deserializers.java
-  - src/main/java/com/vgd/openapi/utils/EventStream.java
-  - src/main/java/com/vgd/openapi/utils/EventStreamLineReader.java
-  - src/main/java/com/vgd/openapi/utils/EventStreamMessage.java
-  - src/main/java/com/vgd/openapi/utils/EventStreamReader.java
-  - src/main/java/com/vgd/openapi/utils/FormMetadata.java
-  - src/main/java/com/vgd/openapi/utils/HTTPClient.java
-  - src/main/java/com/vgd/openapi/utils/HTTPRequest.java
-  - src/main/java/com/vgd/openapi/utils/HeaderMetadata.java
-  - src/main/java/com/vgd/openapi/utils/Helpers.java
-  - src/main/java/com/vgd/openapi/utils/Hook.java
-  - src/main/java/com/vgd/openapi/utils/Hooks.java
-  - src/main/java/com/vgd/openapi/utils/JSON.java
-  - src/main/java/com/vgd/openapi/utils/LazySingletonValue.java
-  - src/main/java/com/vgd/openapi/utils/Metadata.java
-  - src/main/java/com/vgd/openapi/utils/MultipartFormMetadata.java
-  - src/main/java/com/vgd/openapi/utils/OneOfDeserializer.java
-  - src/main/java/com/vgd/openapi/utils/Options.java
-  - src/main/java/com/vgd/openapi/utils/PathParamsMetadata.java
-  - src/main/java/com/vgd/openapi/utils/QueryParameter.java
-  - src/main/java/com/vgd/openapi/utils/QueryParameters.java
-  - src/main/java/com/vgd/openapi/utils/QueryParamsMetadata.java
-  - src/main/java/com/vgd/openapi/utils/RequestBody.java
-  - src/main/java/com/vgd/openapi/utils/RequestMetadata.java
-  - src/main/java/com/vgd/openapi/utils/Response.java
-  - src/main/java/com/vgd/openapi/utils/Retries.java
-  - src/main/java/com/vgd/openapi/utils/RetryConfig.java
-  - src/main/java/com/vgd/openapi/utils/Security.java
-  - src/main/java/com/vgd/openapi/utils/SecurityMetadata.java
-  - src/main/java/com/vgd/openapi/utils/SerializedBody.java
-  - src/main/java/com/vgd/openapi/utils/SpeakeasyHTTPClient.java
-  - src/main/java/com/vgd/openapi/utils/SpeakeasyMetadata.java
-  - src/main/java/com/vgd/openapi/utils/TypedObject.java
-  - src/main/java/com/vgd/openapi/utils/Types.java
-  - src/main/java/com/vgd/openapi/utils/Utf8UrlEncoder.java
-  - src/main/java/com/vgd/openapi/utils/Utils.java
+  - src/main/java/io/github/vishalg0wda/deathstar/Deathstar.java
+  - src/main/java/io/github/vishalg0wda/deathstar/Jedi.java
+  - src/main/java/io/github/vishalg0wda/deathstar/SDKConfiguration.java
+  - src/main/java/io/github/vishalg0wda/deathstar/SecuritySource.java
+  - src/main/java/io/github/vishalg0wda/deathstar/Sith.java
+  - src/main/java/io/github/vishalg0wda/deathstar/models/components/Security.java
+  - src/main/java/io/github/vishalg0wda/deathstar/models/errors/APIException.java
+  - src/main/java/io/github/vishalg0wda/deathstar/models/errors/AuthException.java
+  - src/main/java/io/github/vishalg0wda/deathstar/models/operations/GetJediRequestBuilder.java
+  - src/main/java/io/github/vishalg0wda/deathstar/models/operations/GetJediResponse.java
+  - src/main/java/io/github/vishalg0wda/deathstar/models/operations/GetJediResponseBody.java
+  - src/main/java/io/github/vishalg0wda/deathstar/models/operations/GetSithRequestBuilder.java
+  - src/main/java/io/github/vishalg0wda/deathstar/models/operations/GetSithResponse.java
+  - src/main/java/io/github/vishalg0wda/deathstar/models/operations/GetSithResponseBody.java
+  - src/main/java/io/github/vishalg0wda/deathstar/models/operations/SDKMethodInterfaces.java
+  - src/main/java/io/github/vishalg0wda/deathstar/utils/BackoffStrategy.java
+  - src/main/java/io/github/vishalg0wda/deathstar/utils/BigDecimalString.java
+  - src/main/java/io/github/vishalg0wda/deathstar/utils/BigIntegerString.java
+  - src/main/java/io/github/vishalg0wda/deathstar/utils/Deserializers.java
+  - src/main/java/io/github/vishalg0wda/deathstar/utils/EventStream.java
+  - src/main/java/io/github/vishalg0wda/deathstar/utils/EventStreamLineReader.java
+  - src/main/java/io/github/vishalg0wda/deathstar/utils/EventStreamMessage.java
+  - src/main/java/io/github/vishalg0wda/deathstar/utils/EventStreamReader.java
+  - src/main/java/io/github/vishalg0wda/deathstar/utils/FormMetadata.java
+  - src/main/java/io/github/vishalg0wda/deathstar/utils/HTTPClient.java
+  - src/main/java/io/github/vishalg0wda/deathstar/utils/HTTPRequest.java
+  - src/main/java/io/github/vishalg0wda/deathstar/utils/HeaderMetadata.java
+  - src/main/java/io/github/vishalg0wda/deathstar/utils/Helpers.java
+  - src/main/java/io/github/vishalg0wda/deathstar/utils/Hook.java
+  - src/main/java/io/github/vishalg0wda/deathstar/utils/Hooks.java
+  - src/main/java/io/github/vishalg0wda/deathstar/utils/JSON.java
+  - src/main/java/io/github/vishalg0wda/deathstar/utils/LazySingletonValue.java
+  - src/main/java/io/github/vishalg0wda/deathstar/utils/Metadata.java
+  - src/main/java/io/github/vishalg0wda/deathstar/utils/MultipartFormMetadata.java
+  - src/main/java/io/github/vishalg0wda/deathstar/utils/OneOfDeserializer.java
+  - src/main/java/io/github/vishalg0wda/deathstar/utils/Options.java
+  - src/main/java/io/github/vishalg0wda/deathstar/utils/PathParamsMetadata.java
+  - src/main/java/io/github/vishalg0wda/deathstar/utils/QueryParameter.java
+  - src/main/java/io/github/vishalg0wda/deathstar/utils/QueryParameters.java
+  - src/main/java/io/github/vishalg0wda/deathstar/utils/QueryParamsMetadata.java
+  - src/main/java/io/github/vishalg0wda/deathstar/utils/RequestBody.java
+  - src/main/java/io/github/vishalg0wda/deathstar/utils/RequestMetadata.java
+  - src/main/java/io/github/vishalg0wda/deathstar/utils/Response.java
+  - src/main/java/io/github/vishalg0wda/deathstar/utils/Retries.java
+  - src/main/java/io/github/vishalg0wda/deathstar/utils/RetryConfig.java
+  - src/main/java/io/github/vishalg0wda/deathstar/utils/Security.java
+  - src/main/java/io/github/vishalg0wda/deathstar/utils/SecurityMetadata.java
+  - src/main/java/io/github/vishalg0wda/deathstar/utils/SerializedBody.java
+  - src/main/java/io/github/vishalg0wda/deathstar/utils/SpeakeasyHTTPClient.java
+  - src/main/java/io/github/vishalg0wda/deathstar/utils/SpeakeasyMetadata.java
+  - src/main/java/io/github/vishalg0wda/deathstar/utils/TypedObject.java
+  - src/main/java/io/github/vishalg0wda/deathstar/utils/Types.java
+  - src/main/java/io/github/vishalg0wda/deathstar/utils/Utf8UrlEncoder.java
+  - src/main/java/io/github/vishalg0wda/deathstar/utils/Utils.java
 examples:
   updatePet:
     speakeasy-default-update-pet:
@@ -374,3 +276,13 @@ examples:
           application/json: {"status": 401, "error": "Unauthorized"}
         "404":
           application/json: {"status": 404, "error": "Not Found", "code": "object_not_found"}
+  get_/jedi:
+    speakeasy-default-get-/jedi:
+      responses:
+        "200":
+          application/json: {"message": "May the Force be with you!"}
+  get_/sith:
+    speakeasy-default-get-/sith:
+      responses:
+        "200":
+          application/json: {"message": "I am your father!"}

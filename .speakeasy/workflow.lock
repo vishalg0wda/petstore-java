@@ -7,7 +7,20 @@ sources:
         tags:
             - latest
             - speakeasy-sdk-regen-1731616003
+    swapi-oas:
+        sourceNamespace: petstore-oas
+        sourceRevisionDigest: sha256:a1e99ab7bf5c9340c0789201a61b5f60c392f26975a809ff254bae90c661e3f2
+        sourceBlobDigest: sha256:f9a6767b93212f784888202459af96a96b24bb279bff4f7773305cfb5b167026
+        tags:
+            - latest
 targets:
+    deathstar:
+        source: swapi-oas
+        sourceNamespace: petstore-oas
+        sourceRevisionDigest: sha256:a1e99ab7bf5c9340c0789201a61b5f60c392f26975a809ff254bae90c661e3f2
+        sourceBlobDigest: sha256:f9a6767b93212f784888202459af96a96b24bb279bff4f7773305cfb5b167026
+        codeSamplesNamespace: petstore-oas-code-samples
+        codeSamplesRevisionDigest: sha256:658710460649f0a81567fa08bdb7835d1911bab8d2418ba6efe469d221dba08b
     petstore:
         source: petstore-oas
         sourceNamespace: petstore-oas
@@ -19,7 +32,7 @@ workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
     sources:
-        petstore-oas:
+        swapi-oas:
             inputs:
                 - location: openapi.yaml
             overlays:
@@ -27,9 +40,16 @@ workflow:
             registry:
                 location: registry.speakeasyapi.dev/deathstar/deathstar/petstore-oas
     targets:
-        petstore:
+        deathstar:
             target: java
-            source: petstore-oas
+            source: swapi-oas
+            publish:
+                java:
+                    ossrhUsername: K/ItR2x+
+                    ossrhPassword: $ossrh_password
+                    gpgSecretKey: $java_gpg_secret_key
+                    gpgPassPhrase: $java_gpg_passphrase
+                    useSonatypeLegacy: true
             codeSamples:
                 registry:
                     location: registry.speakeasyapi.dev/deathstar/deathstar/petstore-oas-code-samples

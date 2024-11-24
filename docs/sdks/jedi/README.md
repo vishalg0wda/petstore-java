@@ -1,4 +1,18 @@
-<!-- Start SDK Example Usage [usage] -->
+# Jedi
+(*jedi()*)
+
+## Overview
+
+### Available Operations
+
+* [get](#get) - Jedi endpoint
+
+## get
+
+Returns a message from a Jedi
+
+### Example Usage
+
 ```java
 package hello.world;
 
@@ -22,4 +36,13 @@ public class Application {
     }
 }
 ```
-<!-- End SDK Example Usage [usage] -->
+
+### Response
+
+**[GetJediResponse](../../models/operations/GetJediResponse.md)**
+
+### Errors
+
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| models/errors/APIException | 4XX, 5XX                   | \*/\*                      |

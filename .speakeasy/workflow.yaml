@@ -1,7 +1,7 @@
 workflowVersion: 1.0.0
 speakeasyVersion: latest
 sources:
-    petstore-oas:
+    swapi-oas:
         inputs:
             - location: openapi.yaml
         overlays:
@@ -9,16 +9,16 @@ sources:
         registry:
             location: registry.speakeasyapi.dev/deathstar/deathstar/petstore-oas
 targets:
-    petstore:
+    deathstar:
         target: java
-        source: petstore-oas
+        source: swapi-oas
         publish:
             java:
-                useSonatypeLegacy: true
                 ossrhUsername: K/ItR2x+
                 ossrhPassword: $ossrh_password
                 gpgSecretKey: $java_gpg_secret_key
                 gpgPassPhrase: $java_gpg_passphrase
+                useSonatypeLegacy: true
         codeSamples:
             registry:
                 location: registry.speakeasyapi.dev/deathstar/deathstar/petstore-oas-code-samples

@@ -1,6 +1,6 @@
 configVersion: 2.0.0
 generation:
-  sdkClassName: Petstore
+  sdkClassName: Deathstar
   maintainOpenAPIOrder: true
   usageSnippets:
     optionalPropertyRendering: withExample
@@ -13,10 +13,10 @@ generation:
     oAuth2ClientCredentialsEnabled: false
     oAuth2PasswordEnabled: false
 java:
-  version: 0.2.0
+  version: 0.4.1
   additionalDependencies: []
   additionalPlugins: []
-  artifactID: petstore
+  artifactID: deathstar
   clientServerStatusCodesAsErrors: true
   companyEmail: info@mycompany.com
   companyName: My Company
