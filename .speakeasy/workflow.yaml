@@ -12,6 +12,12 @@ targets:
     petstore:
         target: java
         source: petstore-oas
+        publish:
+            java:
+                ossrhUsername: K/ItR2x+
+                ossrhPassword: $ossrh_password
+                gpgSecretKey: $java_gpg_secret_key
+                gpgPassPhrase: $java_gpg_passphrase
         codeSamples:
             registry:
                 location: registry.speakeasyapi.dev/deathstar/deathstar/petstore-oas-code-samples
