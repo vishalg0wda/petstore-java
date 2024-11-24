@@ -3,15 +3,16 @@ id: 3442177f-e4e2-40fb-94ee-ba3ecb8259f8
 management:
   docChecksum: eca4572634e0d830b2a8d7716ae31d73
   docVersion: 1.0.0
-  speakeasyVersion: 1.439.0
-  generationVersion: 2.457.9
-  releaseVersion: 0.1.1
-  configChecksum: 3580e30a50132d75f446cdb729d84dc3
+  speakeasyVersion: 1.444.1
+  generationVersion: 2.461.4
+  releaseVersion: 0.2.0
+  configChecksum: edaad2546e4cffcb3f406bf8e0b200ed
+  repoURL: https://github.com/vishalg0wda/petstore-java.git
 features:
   java:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.1
-    core: 3.31.1
+    core: 3.32.1
     flattening: 2.81.1
     globalSecurity: 2.82.7
     globalSecurityCallbacks: 0.1.0
@@ -169,6 +170,7 @@ generatedFiles:
   - src/main/java/com/vgd/openapi/utils/OneOfDeserializer.java
   - src/main/java/com/vgd/openapi/utils/Options.java
   - src/main/java/com/vgd/openapi/utils/PathParamsMetadata.java
+  - src/main/java/com/vgd/openapi/utils/QueryParameter.java
   - src/main/java/com/vgd/openapi/utils/QueryParameters.java
   - src/main/java/com/vgd/openapi/utils/QueryParamsMetadata.java
   - src/main/java/com/vgd/openapi/utils/RequestBody.java
@@ -183,6 +185,7 @@ generatedFiles:
   - src/main/java/com/vgd/openapi/utils/SpeakeasyMetadata.java
   - src/main/java/com/vgd/openapi/utils/TypedObject.java
   - src/main/java/com/vgd/openapi/utils/Types.java
+  - src/main/java/com/vgd/openapi/utils/Utf8UrlEncoder.java
   - src/main/java/com/vgd/openapi/utils/Utils.java
 examples:
   updatePet:
