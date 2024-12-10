@@ -1,4 +1,4 @@
-speakeasyVersion: 1.444.1
+speakeasyVersion: 1.453.8
 sources:
     petstore-oas:
         sourceNamespace: petstore-oas
@@ -9,18 +9,20 @@ sources:
             - speakeasy-sdk-regen-1731616003
     swapi-oas:
         sourceNamespace: petstore-oas
-        sourceRevisionDigest: sha256:a1e99ab7bf5c9340c0789201a61b5f60c392f26975a809ff254bae90c661e3f2
-        sourceBlobDigest: sha256:f9a6767b93212f784888202459af96a96b24bb279bff4f7773305cfb5b167026
+        sourceRevisionDigest: sha256:0aea4f5e02eed19eb2d4aee23fdd0cee34daad4e9b0bf72a8deded36a2cc6daf
+        sourceBlobDigest: sha256:d8370b74d3c1f44eb95d44b99784b994a1780302f1dac2a2f20e6263f9bd71e5
         tags:
             - latest
+            - speakeasy-sdk-regen-1732495942
+            - 1.0.0
 targets:
     deathstar:
         source: swapi-oas
         sourceNamespace: petstore-oas
-        sourceRevisionDigest: sha256:a1e99ab7bf5c9340c0789201a61b5f60c392f26975a809ff254bae90c661e3f2
-        sourceBlobDigest: sha256:f9a6767b93212f784888202459af96a96b24bb279bff4f7773305cfb5b167026
-        codeSamplesNamespace: petstore-oas-code-samples
-        codeSamplesRevisionDigest: sha256:658710460649f0a81567fa08bdb7835d1911bab8d2418ba6efe469d221dba08b
+        sourceRevisionDigest: sha256:0aea4f5e02eed19eb2d4aee23fdd0cee34daad4e9b0bf72a8deded36a2cc6daf
+        sourceBlobDigest: sha256:d8370b74d3c1f44eb95d44b99784b994a1780302f1dac2a2f20e6263f9bd71e5
+        codeSamplesNamespace: petstore-oas-java-code-samples
+        codeSamplesRevisionDigest: sha256:31b6e1caa7f1a24bb83b4538310f34468ee5558ee7e0b031bea2a929e5a15239
     petstore:
         source: petstore-oas
         sourceNamespace: petstore-oas
@@ -52,5 +54,5 @@ workflow:
                     useSonatypeLegacy: true
             codeSamples:
                 registry:
-                    location: registry.speakeasyapi.dev/deathstar/deathstar/petstore-oas-code-samples
+                    location: registry.speakeasyapi.dev/deathstar/deathstar/petstore-oas-java-code-samples
                 blocking: false
