@@ -22,12 +22,17 @@ Star Wars API: An API inspired by the Star Wars universe
 
 <!-- Start Table of Contents [toc] -->
 ## Table of Contents
+<!-- $toc-max-depth=2 -->
+* [openapi](#openapi)
+  * [SDK Installation](#sdk-installation)
+  * [SDK Example Usage](#sdk-example-usage)
+  * [Available Resources and Operations](#available-resources-and-operations)
+  * [Error Handling](#error-handling)
+  * [Server Selection](#server-selection)
+* [Development](#development)
+  * [Maturity](#maturity)
+  * [Contributions](#contributions)
 
-* [SDK Installation](#sdk-installation)
-* [SDK Example Usage](#sdk-example-usage)
-* [Available Resources and Operations](#available-resources-and-operations)
-* [Error Handling](#error-handling)
-* [Server Selection](#server-selection)
 <!-- End Table of Contents [toc] -->
 
 <!-- Start SDK Installation [installation] -->
@@ -41,7 +46,7 @@ The samples below show how a published SDK artifact is used:
 
 Gradle:
 ```groovy
-implementation 'io.github.vishalg0wda:deathstar:0.4.1'
+implementation 'io.github.vishalg0wda:deathstar:0.5.0'
 ```
 
 Maven:
@@ -49,7 +54,7 @@ Maven:
 <dependency>
     <groupId>io.github.vishalg0wda</groupId>
     <artifactId>deathstar</artifactId>
-    <version>0.4.1</version>
+    <version>0.5.0</version>
 </dependency>
 ```
 
